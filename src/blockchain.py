@@ -1,5 +1,4 @@
 import datetime
-from venv import create
 
 class BlockChain:
 
@@ -22,6 +21,19 @@ class BlockChain:
             "prev_hash":prev_hash
         }
         return block
-        
+
     def mine_block(self, data:str) -> dict:
-        pass
+        new_index = self.blockchain[-1]["index"]+1
+        new_data = data
+        new_proof = None
+        prev_hash = None
+
+        new_block = {
+            "index":new_index,
+            "timestamp":str(datetime.datetime.now()),
+            "proof":new_proof,
+            "data":new_data,
+            "prev_hash":prev_hash
+        }
+        
+        self.blockchain.append(new_block)
