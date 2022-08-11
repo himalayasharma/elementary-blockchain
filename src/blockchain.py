@@ -26,9 +26,14 @@ class BlockChain:
 
     def mine_block(self, data:str) -> dict:
         prev_block = self.blockchain[-1]
+        prev_proof = prev_block["proof"]
         new_index = prev_block["index"]+1
         new_data = data
-        new_proof = None
+        new_proof = self._calculate_proof(
+            index=new_index,
+            prev_proof=prev_proof,
+            data=new_data
+        )
         prev_hash = self._get_hash(prev_block)
 
         new_block = {
@@ -41,11 +46,34 @@ class BlockChain:
         
         self.blockchain.append(new_block)
 
+    def _calculate_proof(self, index:int, prev_proof:int, data:str):
+        new_proof = 1
+        check_proof = False
+
+        while not check_proof:
+            to_digest = self._to_digest(
+                index=index,
+                data=data,
+                prev_proof=prev_proof,
+                new_proof=new_proof
+            )
+
+            hash = hashlib.sha256(to_digest).hexdigest()
+            if(hash[:4] == "0000"):
+                check_proof = True
+            else:
+                new_proof += 1
+        return new_proof
+    
+    def _to_digest(self, index:int, data:str, prev_proof:int, new_proof:int) -> bytes:
+        to_digest = str(prev_proof**3 + new_proof**2 + index) + data
+        return to_digest.encode()
+
     def _get_hash(self, block:dict) -> str:
         json_str = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(json_str).hexdigest()
 
 bc = BlockChain()
-bc.mine_block("Hllo")
-bc.mine_block("baby")
+bc.mine_block("This is the 2nd block")
+bc.mine_block("This is the 3rd block")
 print(bc.blockchain)
