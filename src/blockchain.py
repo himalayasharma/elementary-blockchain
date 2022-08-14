@@ -73,7 +73,29 @@ class BlockChain:
         json_str = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(json_str).hexdigest()
 
+    def validate_chain(self) -> bool:
+        current_idx = 0
+        current_block = self.blockchain[current_idx]
+
+        while(current_idx < len(self.blockchain)-1):
+            
+            next_idx = current_idx+1
+            current_block = self.blockchain[current_idx]
+            next_block = self.blockchain[next_idx]
+
+            current_block_hash = self._get_hash(current_block)
+            if(current_block_hash != next_block["prev_hash"]):
+                return False
+            current_idx += 1
+        
+        return True
+
 bc = BlockChain()
 bc.mine_block("This is the 2nd block")
 bc.mine_block("This is the 3rd block")
-print(bc.blockchain)
+bc.mine_block("This is the 4th block")
+bc.mine_block("This is the 5th block")
+
+print(bc.validate_chain())
+bc.blockchain[2]["data"] = "this is wrong!"
+print(bc.validate_chain())
