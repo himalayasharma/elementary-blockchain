@@ -90,12 +90,9 @@ class BlockChain:
         
         return True
 
-bc = BlockChain()
-bc.mine_block("This is the 2nd block")
-bc.mine_block("This is the 3rd block")
-bc.mine_block("This is the 4th block")
-bc.mine_block("This is the 5th block")
 
-print(bc.validate_chain())
-bc.blockchain[2]["data"] = "this is wrong!"
-print(bc.validate_chain())
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
