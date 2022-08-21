@@ -4,6 +4,8 @@
     </head>
     <body>
         <h1>View blockchain</h1>
-        <p>Text to show current blockchain!</p>
+        {% for entry in entries %}
+        <p>{{entry}}</p>
+        {% endfor %}
     </body>
 </html>
