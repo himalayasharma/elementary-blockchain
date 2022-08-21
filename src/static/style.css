@@ -38,3 +38,17 @@ body {
     background-color: #1c2023;
     color: white;
 }
+
+.blockchain__links {
+    text-decoration:none;
+    background-color: #03a87c;
+    color: white;
+    padding: 8px 16px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    font-weight:bold;
+  }
+  
+.blockchain__links:hover {
+background-color: #029e74;
+}
