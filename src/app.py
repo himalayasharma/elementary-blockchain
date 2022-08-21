@@ -22,7 +22,11 @@ def mine_block():
 
 @app.route('/validate_blockchain', methods=["GET"])
 def validate_blockchain():
-    return render_template("validate_blockchain.html")
+    if bc.validate_chain() == True:
+        validity_statement = "The chain in VALID"
+    else:
+        validity_statement = "The chain is INVALID"
+    return render_template("validate_blockchain.html", entries=validity_statement)
 
 if __name__ == "__main__":
     app.run(debug=True)
