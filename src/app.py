@@ -11,12 +11,13 @@ def home():
 
 @app.route('/view_blockchain', methods=["GET"])
 def view_blockchain():
-    return render_template("view_blockchain.html")
+    return render_template("view_blockchain.html", entries=bc.blockchain)
 
 @app.route('/mine_block', methods=["GET", "POST"])
 def mine_block():
     if(request.method == "POST"):
-        print(request.form)
+        data = request.form
+        bc.mine_block(data.to_dict()["data"])
     return render_template("mine_block.html")
 
 @app.route('/validate_blockchain', methods=["GET"])
