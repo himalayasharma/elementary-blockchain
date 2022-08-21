@@ -13,5 +13,9 @@ def home():
 def view_blockchain():
     return render_template("view_blockchain.html")
 
+@app.route('/validate_blockchain', methods=["GET"])
+def validate_blockchain():
+    return render_template("validate_blockchain.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
