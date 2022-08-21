@@ -4,6 +4,12 @@
         <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
+        <div>
+            <a href="/" class="blockchain__links">Home</a>
+            <a href="/mine_block" class="blockchain__links">Mine block</a>
+            <a href="/view_blockchain" class="blockchain__links">View blockchain</a>
+            <a href="/validate_blockchain" class="blockchain__links">Validate blockchain</a>
+        </div>
         <h1>View blockchain</h1>
         {% for entry in entries %}
         <p>{{entry}}</p>
