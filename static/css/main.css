@@ -14,7 +14,7 @@ p {
     font-family: serif;
     font-size: 1.2em;
     display: inline-block;
-	margin-left: 50px;
+	margin-left: 70px;
 }
 
 input {
@@ -25,7 +25,7 @@ input {
 	border-radius: 10px;
 	font-family: serif;
 	font-size: 1.3em;
-	margin-left: 50px;
+	margin-left: 70px;
   }
 
 input:focus {
@@ -47,7 +47,7 @@ h2 {
     border:  none;
     width:  200px;
     color: white;
-	margin-left: 50px;
+	margin-left: 70px;
 }
 
 #create_block:hover {
