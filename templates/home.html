@@ -16,6 +16,8 @@
         <br>
         <input type="submit" value="Create block" id="create_block">
     </form>
+    <h2>Validity status</h2>
+    <p>{{ validity_status }}</p>
     <h2>Current blockchain</h2>
     {% for block in blockchain %}
     <p>{{ block }}</p>
