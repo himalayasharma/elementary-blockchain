@@ -8,3 +8,48 @@ img {
 	margin-right: auto;
 	width: 35%;
 }
+
+p {
+    color: rgb(0, 0, 0);
+    font-family: serif;
+    font-size: 1.2em;
+    display: inline-block;
+	margin-left: 50px;
+}
+
+input {
+	width: 300px;
+	margin-bottom: 20px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	font-family: serif;
+	font-size: 1.3em;
+	margin-left: 50px;
+  }
+
+input:focus {
+    outline: none;
+    border: solid 5px #00FFCE;
+}
+
+h2 { 
+	color: #000000;
+	font-family: 'Raleway',sans-serif; 
+	font-size: 30px; 
+	font-weight: 800; 
+	line-height: 36px;
+	margin-left: 50px;
+}
+
+#create_block {
+    background-color: #af47ab;
+    border:  none;
+    width:  200px;
+    color: white;
+	margin-left: 50px;
+}
+
+#create_block:hover {
+    background-color: #f487d2;
+}
