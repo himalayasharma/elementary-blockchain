@@ -8,9 +8,15 @@ bc = BlockChain()
 @app.route('/', methods=["GET", "POST"])
 def home():
     if(request.method == "POST"):
-        data = request.form['data_input']
-        bc.mine_block(data=data)
-        data=''
+        if(request.form["action"] == "Create block"):
+            # Mine block
+            data = request.form['data_input']
+            bc.mine_block(data=data)
+        else:
+        # Modify block
+            index = int(request.form['index_input'])
+            modified_data = request.form['modified_data_input']
+            bc.blockchain[index-1]["data"] = modified_data
     is_chain_valid = bc.validate_chain()
     if is_chain_valid:
         validity_status = 'The chain is VALID'
