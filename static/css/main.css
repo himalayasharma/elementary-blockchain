@@ -1,4 +1,10 @@
 body {
-    background-color: slategray;
-    text-align: center;
+    background-color: whitesmoke;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
