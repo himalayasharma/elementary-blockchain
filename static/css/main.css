@@ -55,3 +55,12 @@ h2 {
 #create_block:hover {
     background-color: #f487d2;
 }
+
+hr {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+	width: 90%;
+}
