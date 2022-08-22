@@ -7,7 +7,7 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Elementary blockchain - A simple web app to demonstrate how a blockchain works</h1>
+    <img src="/static/logo.png">
     <h2>Mine block</h2>
     <form action="/" method="POST">
         <p>Enter data (string): </p>
@@ -17,10 +17,10 @@
         <input type="submit" value="Create block" id="create_block">
     </form>
     <h2>Validity status</h2>
-    <p>{{ validity_status }}</p>
+        <p>{{ validity_status }}</p>
     <h2>Current blockchain</h2>
-    {% for block in blockchain %}
-    <p>{{ block }}</p>
-    {% endfor %}
+        {% for block in blockchain %}
+        <p>{{ block }}</p>
+        {% endfor %}
 </body>
 </html>
