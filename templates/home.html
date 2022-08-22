@@ -25,6 +25,18 @@
         {% for block in blockchain %}
         <p>{{ block }}</p>
         {% endfor %}
+    <h2>Modify block</h2>
+    <form action="/" method="POST">
+        <p>Enter index (int): </p>
+        <br>
+        <input type="text" name="index_input">
+        <br>    
+        <p>Enter new data (string): </p>
+        <br>
+        <input type="text" name="modified_data_input">
+        <br>
+        <input type="submit" value="Update block" id="update_block">
+    </form>
 </body>
 <hr>
 <footer>
