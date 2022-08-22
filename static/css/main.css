@@ -56,6 +56,18 @@ h2 {
     background-color: #f487d2;
 }
 
+#update_block {
+    background-color: #af47ab;
+    border:  none;
+    width:  200px;
+    color: white;
+	margin-left: 70px;
+}
+
+#update_block:hover {
+    background-color: #f487d2;
+}
+
 hr {
 	display: block;
 	margin-left: auto;
