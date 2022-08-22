@@ -10,6 +10,7 @@ def home():
     if(request.method == "POST"):
         data = request.form['data_input']
         bc.mine_block(data=data)
+        data=''
     is_chain_valid = bc.validate_chain()
     if is_chain_valid:
         validity_status = 'The chain is VALID'
