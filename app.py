@@ -30,6 +30,7 @@ def home():
                 request_type = "Request is okay"
             elif(index == 1):
                 request_type = "Invalid request! Genesis block cannot be altered. Try again with some other index!"
+            else:
                 request_type = f"Invalid request. Enter index only between 2 and current length of chain i.e. {len(bc.blockchain)}. Try again!"        
         else:
             # Reset blockchain
