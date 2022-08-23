@@ -20,7 +20,10 @@
             <li>Cryptographic hash – of the previous block. Since each block contains information about the block previous to it, they effectively form a chain similar to a linked list structure.</li>
         </ol>
     <h2>Mine block</h2>
-    <p></p>
+    <p>New data (which is usually a transaction) is compiled into a new block that has to be mined. Proof of Work (PoW) algorithm generates a target hash. Miners (which are many in a legitimate blockchain, but only you in this case) races to find a hash value that matches this target hash.
+        <br>
+        <br>
+    In this demonstration, if first 4 hex-digits of hash computed by miner (i.e. you) is "0000" then that miner wins and appends this block to the existing chain. </p>
     <form action="/" method="POST">
         <p>Enter data (string): </p>
         <br>
