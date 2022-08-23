@@ -11,6 +11,14 @@
 <body>
     <a class="github_link" href="https://github.com/himalayasharma/elementary-blockchain" target="_blank">View Github repo</a>
     <img src="/static/logo.png">
+    <p>A blockchain consists of a growing list of records, called blocks, that are securely linked together using cryptographic hashes. In my demonstration each block contains:</p>
+        <ol>
+            <li>Index – keeps track of the number of blocks in the blockchain</li>
+            <li>Timestamp –  proves that the transaction data existed when the block was created</li>
+            <li>Proof – contains proof of work</li>
+            <li>Data – string of characters (usually transaction data is stored but to keep things simple I’ve designed it to store strings)</li>
+            <li>Cryptographic hash – of the previous block (since each block contains information about the block previous to it they effectively form a chain similar to a linked list structure)</li>
+        </ol>
     <h2>Mine block</h2>
     <form action="/" method="POST">
         <p>Enter data (string): </p>
