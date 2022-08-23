@@ -104,14 +104,14 @@ class BlockChain:
             if(hash[:4] != "0000"):
                 error = {
                     'error_code':2,
-                    'reason':f"Mismatch between proof of work of block at index {next_idx}"
+                    'reason':f"Hash value of block at index {next_idx} does not have first 4 hex digits as '0000'"
                 }
                 return False, error
             current_idx += 1
 
         error = {
             'error_code':0,
-            'reason':"All hash values and proof of work are okay"
+            'reason':"Hash values for all blocks are okay."
         }
         return True, error
 
