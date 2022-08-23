@@ -32,7 +32,12 @@
         <input name="action" type="submit" value="Create block" id="create_block">
     </form>
     <h2>Validity status</h2>
-        <p>{{ validity_status }}</p>
+    <p> Two conditions are checked for validating the blockchain:</p>
+    <ol>
+        <li>Hash is computed for each block and matched against the hash contained in the next block (which points to the previous one). If they both match then the first check is passed.</li>
+        <li>First 4 hex-digits of hash of each block is checked. If it is equal to "0000", then the second check is also passed.</li>
+    </ol>
+        <p style="background-color:lavender;">{{ validity_status }}</p>
     <h2>Current blockchain</h2>
         {% for block in blockchain %}
         <p>{{ block }}</p>
