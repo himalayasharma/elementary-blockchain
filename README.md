@@ -21,9 +21,10 @@ Project Organization
     ├── Makefile              <- Makefile with commands like `make create_environment` or `make requirements`
     ├── README.md             <- The top-level README for developers using this project
     ├── readme-assets         <- Contains images to be used in README.md
-    ├── static                <- Contains static assets like logo, favicon etc.
+    ├── static               
     │   └── css               <- Contains stylesheet for styling webpage
-    |                         <- Contains html templates to rendered
+    │
+    ├── templates             <- Contains html templates to be rendered
     ├── requirements.txt      <- The requirements file for reproducing the project environment
     ├── test_environment.py   <- Script to virtual environment
     ├── blockchain.py         <- Contains blockchain class
