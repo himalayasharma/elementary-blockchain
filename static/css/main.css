@@ -76,6 +76,19 @@ h2 {
     background-color: #f487d2;
 }
 
+
+#reset_block {
+    background-color: #af47ab;
+    border:  none;
+    width:  200px;
+    color: white;
+	margin-left: 50px;
+}
+
+#reset_block:hover {
+    background-color: #f487d2;
+}
+
 hr {
 	display: block;
 	margin-left: auto;
