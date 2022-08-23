@@ -13,15 +13,15 @@ def home():
             data = request.form['data_input']
             bc.mine_block(data=data)
         else:
-        # Modify block
+            # Modify block
             index = int(request.form['index_input'])
             modified_data = request.form['modified_data_input']
             bc.blockchain[index-1]["data"] = modified_data
-    is_chain_valid = bc.validate_chain()
+    is_chain_valid, error = bc.validate_chain()
     if is_chain_valid:
-        validity_status = 'The chain is VALID'
+        validity_status = f'The chain is VALID. {error["reason"]}'
     else:
-        validity_status = 'The chain is INVALID'
+        validity_status = f'The chain is INVALID. {error["reason"]}'
     return render_template('home.html', blockchain=bc.blockchain, validity_status=validity_status)
 
 
