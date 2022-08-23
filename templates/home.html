@@ -46,6 +46,9 @@
         <p style="background-color:lavender;">{{ block }}</p>
         {% endfor %}
     <h2>Modify block</h2>
+    <p>In reality, altering a block in a blockchain is not permitted. Immutability of the chain is a core aspect. Here freedom has to been given to you just to demonstrate that even if someone somehow manages to change one of the blocks, it can be easily traced.</p>
+
+    <p>Modify a block and check out the validity status above.</p>
     <form action="/" method="POST">
         <p>Enter index (int): </p>
         <br>
@@ -59,6 +62,7 @@
         <br>
         <input name="action" type="submit" value="Reset blockchain" id="reset_block">
     </form>
+    <p>Blockchain is used in a decentralized way so that no single person or group has control - rather, all users collectively retain control. Therefore, even if a hacker successfully alters the entire blockchain on one specific node, it can be validated against blockchain copies that other nodes have to verify authenticity of the chain. </p>
 </body>
 <hr>
 <footer>
