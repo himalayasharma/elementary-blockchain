@@ -74,8 +74,8 @@ class BlockChain:
         return hashlib.sha256(json_str).hexdigest()
 
     def validate_chain(self) -> bool:
+        
         current_idx = 0
-        current_block = self.blockchain[current_idx]
 
         while(current_idx < len(self.blockchain)-1):
             
@@ -84,11 +84,36 @@ class BlockChain:
             next_block = self.blockchain[next_idx]
 
             current_block_hash = self._get_hash(current_block)
+            print(current_idx, next_idx)
+            print(current_block_hash, next_block["prev_hash"])
             if(current_block_hash != next_block["prev_hash"]):
-                return False
+                error = {
+                    'error_code':1,
+                    'reason':f"Mismatch between hash value of block at index {current_idx} & previous hash value stored in the next block at index {next_idx}"
+                }
+                return False, error
+
+            to_digest = self._to_digest(
+                index=next_block["index"],
+                data=next_block["data"],
+                prev_proof=current_block["proof"],
+                new_proof=next_block["proof"]
+            )
+
+            hash = hashlib.sha256(to_digest).hexdigest()
+            if(hash[:4] != "0000"):
+                error = {
+                    'error_code':2,
+                    'reason':f"Mismatch between proof of work of block at index {next_idx}"
+                }
+                return False, error
             current_idx += 1
-        
-        return True
+
+        error = {
+            'error_code':0,
+            'reason':"All hash values and proof of work are okay"
+        }
+        return True, error
 
 
 def main():
