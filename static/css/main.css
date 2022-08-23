@@ -17,6 +17,14 @@ p {
 	margin-left: 70px;
 }
 
+ol {
+    color: rgb(0, 0, 0);
+    font-family: serif;
+    font-size: 1.2em;
+    display: inline-block;
+	margin-left: 70px;
+}
+
 input {
 	width: 300px;
 	margin-bottom: 20px;
