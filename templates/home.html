@@ -39,8 +39,11 @@
     </ol>
         <p style="background-color:lavender;">{{ validity_status }}</p>
     <h2>Current blockchain</h2>
+    <p>This is how the blockchain looks like currently. Each block is stored as a dictionary.</p>
+    <p>NOTE: The first block i.e. Genesis block is created by default and is the starting point for the chain.</p>
+    <br>
         {% for block in blockchain %}
-        <p>{{ block }}</p>
+        <p style="background-color:lavender;">{{ block }}</p>
         {% endfor %}
     <h2>Modify block</h2>
     <form action="/" method="POST">
