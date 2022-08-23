@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="readme-assets/blockchain.jpg" alt="Logo" width="240" height="240">
+    <img src="readme-assets/blockchain.jpg" alt="Logo">
   </a>
 
   <h1 align="center">Elementary blockchain</h1>
