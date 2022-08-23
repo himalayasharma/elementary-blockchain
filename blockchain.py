@@ -89,7 +89,7 @@ class BlockChain:
             if(current_block_hash != next_block["prev_hash"]):
                 error = {
                     'error_code':1,
-                    'reason':f"Mismatch between hash value of block at index {current_idx} & previous hash value stored in the next block at index {next_idx}"
+                    'reason':f"Mismatch between hash value of block at index {current_idx} & previous hash value stored in the next block at index {next_idx}."
                 }
                 return False, error
 
@@ -104,7 +104,7 @@ class BlockChain:
             if(hash[:4] != "0000"):
                 error = {
                     'error_code':2,
-                    'reason':f"Hash value of block at index {next_idx} does not have first 4 hex digits as '0000'"
+                    'reason':f"Hash value of block at index {next_idx} does not have first 4 hex digits as '0000'."
                 }
                 return False, error
             current_idx += 1
