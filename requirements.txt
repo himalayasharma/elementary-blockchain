@@ -6,8 +6,12 @@ importlib-metadata==4.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.1
+numpy==1.23.2
 pip==22.1.2
 setuptools==61.2.0
 Werkzeug==2.2.2
 wheel==0.37.1
 zipp==3.8.1
+
+[notice] A new release of pip available: 22.1.2 -> 22.2.2
+[notice] To update, run: pip install --upgrade pip
