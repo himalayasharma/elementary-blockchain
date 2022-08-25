@@ -37,10 +37,11 @@
         <li>Hash is computed for each block and matched against the hash contained in the next block (which points to the previous one). If they both match then the first check is passed.</li>
         <li>First 4 hex-digits of hash of each block is checked. If it is equal to "0000", then the second check is also passed.</li>
     </ol>
-        <p style="background-color:lavender;">{{ validity_status }}</p>
     <h2>Current blockchain</h2>
     <p>This is how the blockchain looks like currently. Each block is stored as a dictionary.</p>
     <p>NOTE: The first block i.e. Genesis block is created by default and is the starting point for the chain.</p>
+    <br>
+    <p style="background-color:lavender;">{{ validity_status }}</p>
     <br>
         {% for block in blockchain %}
         <p style="background-color:lavender;">{{ block }}</p>
@@ -49,6 +50,8 @@
     <p>In reality, altering a block in a blockchain is not permitted. Immutability of the chain is a core aspect. Here freedom has to been given to you just to demonstrate that even if someone somehow manages to change one of the blocks, it can be easily traced.</p>
 
     <p>Modify a block and check out the validity status above.</p>
+    <br>
+    <p style="background-color:lavender;">{{ validity_status }}</p>
     <form action="/" method="POST">
         <p>Enter index (int): </p>
         <br>
