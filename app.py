@@ -23,6 +23,15 @@ def refresh():
         refreshed_chain = bc.blockchain
     return render_template('home.html', blockchain=refreshed_chain)
 
+@app.route('/mine_block', methods=["GET", "POST"])
+def mine_block():
+    if(request.method == "POST"):
+    # CASE 1: MINE BLOCK
+        if(request.form["action"] == "Create block"):
+            data = request.form['data_input']
+            bc.mine_block(data=data)
+    return render_template('home.html', blockchain=bc.blockchain, validity_status=get_validity_status(bc))
+
 # Base url for app is '/'
 @app.route('/', methods=["GET", "POST"])
 def home():
@@ -30,12 +39,8 @@ def home():
     # By default it is set ""
     request_type = ""
     if(request.method == "POST"):
-        # CASE 1: MINE BLOCK
-        if(request.form["action"] == "Create block"):
-            data = request.form['data_input']
-            bc.mine_block(data=data)
         # CASE 2: MODIFY BLOCK
-        elif(request.form["action"] == "Update block"):
+        if(request.form["action"] == "Update block"):
             index = request.form['index_input']
             # INVALID REQUEST - if index is not a digit
             if index.isnumeric() == False:
