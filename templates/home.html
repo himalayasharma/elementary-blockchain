@@ -41,7 +41,7 @@
     <p>This is how the blockchain looks like currently. Each block is stored as a dictionary.</p>
     <p>NOTE: The first block i.e. Genesis block is created by default and is the starting point for the chain.</p>
     <br>
-    <p style="background-color:lavender;">{{ validity_status }}</p>
+    <p style="color:white;background-color:#af47ab;">{{ validity_status }}</p>
     <br>
         {% for block in blockchain %}
         <p style="background-color:lavender;">{{ block }}</p>
@@ -51,7 +51,7 @@
 
     <p>Modify a block and check out the validity status above.</p>
     <br>
-    <p style="background-color:lavender;">{{ validity_status }}</p>
+    <p style="color:white;background-color:#af47ab;">{{ validity_status }}</p>
     <form action="/" method="POST">
         <p>Enter index (int): </p>
         <br>
