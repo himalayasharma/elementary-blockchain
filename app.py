@@ -17,6 +17,12 @@ def get_validity_status(blockchain):
         validity_status = f'The chain is INVALID. {error["reason"]}'
     return validity_status
 
+@app.route('/refresh', methods=["POST", "GET"])
+def refresh():
+    if(request.method == "POST"):
+        refreshed_chain = bc.blockchain
+    return render_template('home.html', blockchain=refreshed_chain)
+
 # Base url for app is '/'
 @app.route('/', methods=["GET", "POST"])
 def home():

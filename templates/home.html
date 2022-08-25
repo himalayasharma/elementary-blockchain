@@ -53,6 +53,10 @@
     <br>
     <p style="color:white;background-color:#af47ab;">{{ validity_status }}</p>
     <br>
+    <form action="/refresh", method="POST">
+        <!-- Button - To refresh blockchain  -->
+        <input name="action" type="submit" value="Refresh blockchain" id="refresh_blockchain">
+    </form>
         {% for block in blockchain %}
         <p style="background-color:lavender;">{{ block }}</p>
         {% endfor %}
