@@ -17,29 +17,27 @@ def get_validity_status(blockchain):
         validity_status = f'The chain is INVALID. {error["reason"]}'
     return validity_status
 
+# REFRESH BLOCKCHAIN
 @app.route('/refresh', methods=["POST", "GET"])
 def refresh():
     if(request.method == "POST"):
         refreshed_chain = bc.blockchain
-    return render_template('home.html', blockchain=refreshed_chain)
+    return render_template('home.html', blockchain=refreshed_chain, validity_status=get_validity_status(bc))
 
+# MINE BLOCK
 @app.route('/mine_block', methods=["GET", "POST"])
 def mine_block():
     if(request.method == "POST"):
-    # CASE 1: MINE BLOCK
         if(request.form["action"] == "Create block"):
             data = request.form['data_input']
             bc.mine_block(data=data)
     return render_template('home.html', blockchain=bc.blockchain, validity_status=get_validity_status(bc))
 
-# Base url for app is '/'
-@app.route('/', methods=["GET", "POST"])
-def home():
-    # `request_type` tells about the request made by MODIFY BLOCK
-    # By default it is set ""
+# MODIFY BLOCK
+@app.route('/modify_block', methods=["GET", "POST"])
+def modify_block():
     request_type = ""
     if(request.method == "POST"):
-        # CASE 2: MODIFY BLOCK
         if(request.form["action"] == "Update block"):
             index = request.form['index_input']
             # INVALID REQUEST - if index is not a digit
@@ -60,12 +58,19 @@ def home():
                 # INVALID REQUEST - index specified is more than length of the chain
                 else:
                     request_type = f"Invalid request! Valid indices are: {np.arange(2, len(bc.blockchain)+1)}"        
-        # CASE 3: RESET BLOCKCHAIN
+        # RESET BLOCKCHAIN
         else:
             bc.blockchain = BlockChain().blockchain
-
     return render_template('home.html', blockchain=bc.blockchain, validity_status=get_validity_status(bc), request_type=request_type)
 
+
+# Base url for app is '/'
+@app.route('/', methods=["GET"])
+def home():    
+    # `request_type` tells about the request made by MODIFY BLOCK
+    # By default it is set ""
+    request_type=""
+    return render_template('home.html', blockchain=bc.blockchain, validity_status=get_validity_status(bc), request_type=request_type)
 
 if __name__ == "__main__":
     app.run(debug=True)
