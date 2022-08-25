@@ -9,8 +9,11 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.png">
 </head>
 <body>
+    <!-- Add Github repo link -->
     <a class="github_link" href="https://github.com/himalayasharma/elementary-blockchain" target="_blank">View Github repo</a>
+    <!-- Add logo -->
     <img src="/static/logo.png">
+    <!-- SECTION 1: Introduction - What is a blockchain? -->
     <p>A blockchain consists of a growing list of records, called blocks, that are securely linked together using cryptographic hashes. In my demonstration each block contains:</p>
         <ol>
             <li>Index – keeps track of the number of blocks in the blockchain.</li>
@@ -19,24 +22,31 @@
             <li>Data – string of characters (usually transaction data is stored but to keep things simple I’ve designed it to store strings).</li>
             <li>Cryptographic hash – of the previous block. Since each block contains information about the block previous to it, they effectively form a chain similar to a linked list structure.</li>
         </ol>
+    <!-- SECTION 2: Mine block -->
+    <!-- What does mining a block mean? -->
     <h2>Mine block</h2>
     <p>New data (which is usually a transaction) is compiled into a new block that has to be mined. Proof of Work (PoW) algorithm generates a target hash. Miners (which are many in a legitimate blockchain, but only you in this case) races to find a hash value that matches this target hash.
         <br>
         <br>
     In this demonstration, if first 4 hex-digits of hash computed by miner (i.e. you) is "0000" then that miner wins and appends this block to the existing chain. </p>
+    <!-- Form - To collect data for for adding new block  -->
     <form action="/" method="POST">
         <p>Enter data (string): </p>
         <br>
         <input type="text" name="data_input">
         <br>
+        <!-- Button - To create block  -->
         <input name="action" type="submit" value="Create block" id="create_block">
     </form>
+    <!-- SECTION 3: VALIDITY STATUS -->
+    <!-- How to check validity status of blockchain? -->
     <h2>Validity status</h2>
     <p> Two conditions are checked for validating the blockchain:</p>
     <ol>
         <li>Hash is computed for each block and matched against the hash contained in the next block (which points to the previous one). If they both match then the first check is passed.</li>
         <li>First 4 hex-digits of hash of each block is checked. If it is equal to "0000", then the second check is also passed.</li>
     </ol>
+    <!-- SECTION 4: CURRENT BLOCKCHAIN -->
     <h2>Current blockchain</h2>
     <p>This is how the blockchain looks like currently. Each block is stored as a dictionary.</p>
     <p>NOTE: The first block i.e. Genesis block is created by default and is the starting point for the chain.</p>
@@ -46,12 +56,13 @@
         {% for block in blockchain %}
         <p style="background-color:lavender;">{{ block }}</p>
         {% endfor %}
+    <!-- SECTION 5: MODIFY BLOCK -->
     <h2>Modify block</h2>
     <p>In reality, altering a block in a blockchain is not permitted. Immutability of the chain is a core aspect. Here freedom has to been given to you just to demonstrate that even if someone somehow manages to change one of the blocks, it can be easily traced.</p>
-
     <p>Modify a block and check out the validity status above.</p>
     <br>
     <p style="color:white;background-color:#af47ab;">{{ validity_status }}</p>
+    <!-- Form - To collect data for updation  -->
     <form action="/" method="POST">
         <p>Enter index (int): </p>
         <br>
@@ -61,13 +72,16 @@
         <br>
         <input type="text" name="modified_data_input">
         <br>
+        <!-- Button - To modify block  -->
         <input name="action" type="submit" value="Update block" id="update_block"><p>{{ request_type }}</p>
         <br>
+        <!-- Button - To reset blockchain -->
         <input name="action" type="submit" value="Reset blockchain" id="reset_block">
     </form>
     <p>Blockchain is used in a decentralized way so that no single person or group has control - rather, all users collectively retain control. Therefore, even if a hacker successfully alters the entire blockchain on one specific node, it can be validated against blockchain copies that other nodes have to verify authenticity of the chain. </p>
 </body>
 <hr>
+<!-- Footer -->
 <footer>
     <center><p>© 2022 <a href="https://github.com/himalayasharma" style="text-decoration: none;">Himalaya Sharma</a></p><br></center>
 </footer>  
