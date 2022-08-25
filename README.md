@@ -60,6 +60,25 @@ Setup
     make app
 	```
 
+Web Application Screenshots
+------------
+
+Screenshot 1: A brief introduction of what a blockchain is.
+
+![alt text](https://github.com/himalayasharma/elementary-blockchain/blob/app-v2/readme-assets/1-app-brief-intro.png)
+
+Screenshot 2: Functionality to mine block.
+
+![alt text](https://github.com/himalayasharma/elementary-blockchain/blob/app-v2/readme-assets/2-app-mine-block.png)
+
+Screenshot 3: Checks to ensure validity and view current blockchain.
+
+![alt text](https://github.com/himalayasharma/elementary-blockchain/blob/app-v2/readme-assets/3-app-validity-status-current-blockchain.png)
+
+Screenshot 4: Functionality to modify existing blockchain along with an option to reset it completely.
+
+![alt text](https://github.com/himalayasharma/elementary-blockchain/blob/app-v2/readme-assets/4-modify-block-reset-blockchain.png)
+
 Contributing
 ------------
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated. If you have a suggestion that would make this better, please fork the repo and create a pull request. Don't forget to give the project a star! Thanks again!
