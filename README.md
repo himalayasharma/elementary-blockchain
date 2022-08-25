@@ -14,6 +14,8 @@ A simple demonstration of how the blockchain words.
 
 Checkout the web application [here](https://elementary-blockchain.herokuapp.com/).
 
+NOTE: There could be some issues when viewing the current blockchain after mining/modifying a block. This is due to the browser cache. You can use the "Reset blockchain" button or alternatively open the app in incognito mode.
+
 Project Organization
 ------------
 
