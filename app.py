@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, render_template, flash, redirect
+from flask import Flask, request, render_template
 from blockchain import BlockChain
 
 # Create app
@@ -28,7 +28,6 @@ def home():
         if(request.form["action"] == "Create block"):
             data = request.form['data_input']
             bc.mine_block(data=data)
-            return redirect("/")
         # CASE 2: MODIFY BLOCK
         elif(request.form["action"] == "Update block"):
             index = request.form['index_input']
