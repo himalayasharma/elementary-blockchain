@@ -28,7 +28,7 @@ Project Organization
     │
     ├── templates             <- Contains html templates to be rendered
     ├── requirements.txt      <- The requirements file for reproducing the project environment
-    ├── test_environment.py   <- Script to virtual environment
+    ├── test_environment.py   <- Script to test virtual environment
     ├── blockchain.py         <- Contains blockchain class
     ├── Procfile              <- Deployment specific requirement (for Heroku)
     └── app.py                <- Contains code for application
