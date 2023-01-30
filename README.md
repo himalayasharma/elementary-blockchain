@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="readme-assets/blockchain.jpg" alt="Logo">
+    <img src="readme-assets/DALL·E-blockchain-logo.png" width="224" height="224" alt="Logo">
   </a>
 
   <h1 align="center">Elementary blockchain</h1>
