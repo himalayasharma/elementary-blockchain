@@ -10,9 +10,9 @@
 
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/himalayasharma/elementary-blockchain?style=social"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/himalayasharma/elementary-blockchain?style=social"> <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/himalayasharma/elementary-blockchain"> <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/himalayasharma/elementary-blockchain">
 
-A simple demonstration of how the blockchain words.
+The project involved the implementation of a blockchain model using an object-oriented approach. The model was equipped with several functionalities including the ability to view the chain, mine blocks using a simple proof of work algorithm, evaluate validity, and ensure traceability in case of any unauthorized modifications.
 
-Checkout the web application [here](https://elementary-blockchain.herokuapp.com/).
+Checkout the web application [here](https://elementary-blockchain.onrender.com/).
 
 NOTE: There could be some issues when viewing the current blockchain after mining/modifying a block. This is due to the browser cache. You can use the "Reset blockchain" button or alternatively open the app in incognito mode.
 
