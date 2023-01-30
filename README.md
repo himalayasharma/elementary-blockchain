@@ -5,7 +5,7 @@
     <img src="readme-assets/DALL·E-blockchain-logo.png" width="224" height="224" alt="Logo">
   </a>
 
-  <h1 align="center">Elementary blockchain</h1>
+  <h1 align="center"><img src="readme-assets/globe-lineal.gif" width="35px"> Elementary blockchain</h1>
 </div>
 
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/himalayasharma/elementary-blockchain?style=social"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/himalayasharma/elementary-blockchain?style=social"> <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/himalayasharma/elementary-blockchain"> <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/himalayasharma/elementary-blockchain">
